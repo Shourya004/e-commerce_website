@@ -20,11 +20,11 @@ From that directory, install dependencies and start the development server:
 
 ```sh
 npm install
-npm start
+ng serve / npm start
 ```
 
 Build the application with:
 
 ```sh
-npm run build
+ng build / npm run build
 ```
