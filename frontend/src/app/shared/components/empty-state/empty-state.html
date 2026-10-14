@@ -1,0 +1,27 @@
+<div
+  class="my-space-md flex flex-col items-center justify-center rounded-xl bg-surface-container-lowest px-space-md py-space-xl text-center shadow-sm"
+>
+  <div
+    class="mb-space-md flex h-16 w-16 items-center justify-center rounded-full bg-surface-container md:h-20 md:w-20"
+  >
+    <span class="material-symbols-outlined text-[32px] text-secondary md:text-[40px]">{{
+      icon()
+    }}</span>
+  </div>
+
+  <h3
+    class="mb-2 font-headline-sm text-headline-sm text-primary md:font-headline-md md:text-headline-md"
+  >
+    {{ title() }}
+  </h3>
+
+  <p
+    class="mb-space-lg max-w-lg font-body-sm text-body-sm text-on-surface-variant md:font-body-md md:text-body-md"
+  >
+    {{ message() }}
+  </p>
+
+  <div class="flex flex-wrap items-center justify-center gap-space-sm">
+    <ng-content />
+  </div>
+</div>

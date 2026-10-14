@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Colours (copied from your Stitch design) */
+  --color-background: #fff8f4;
+  --color-surface: #fff8f4;
+  --color-surface-bright: #fff8f4;
+  --color-surface-dim: #e2d8d0;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fcf2ea;
+  --color-surface-container: #f7ece4;
+  --color-surface-container-high: #f1e6de;
+  --color-surface-container-highest: #ebe1d9;
+  --color-surface-variant: #ebe1d9;
+  --color-surface-tint: #3b6752;
+  --color-on-background: #1f1b16;
+  --color-on-surface: #1f1b16;
+  --color-on-surface-variant: #414943;
+  --color-inverse-surface: #352f2a;
+  --color-inverse-on-surface: #f9efe7;
+  --color-inverse-primary: #a1d1b7;
+  --color-outline: #717973;
+  --color-outline-variant: #c0c9c2;
+
+  --color-primary: #002c1c;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #154330;
+  --color-on-primary-container: #81b097;
+  --color-primary-fixed: #bdedd2;
+  --color-primary-fixed-dim: #a1d1b7;
+  --color-on-primary-fixed: #002114;
+  --color-on-primary-fixed-variant: #224f3b;
+
+  --color-secondary: #7a5821;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fed08d;
+  --color-on-secondary-container: #795720;
+  --color-secondary-fixed: #ffddb1;
+  --color-secondary-fixed-dim: #ecbf7e;
+  --color-on-secondary-fixed: #291800;
+  --color-on-secondary-fixed-variant: #5f410a;
+
+  --color-tertiary: #735c00;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #cba72f;
+  --color-on-tertiary-container: #4e3d00;
+  --color-tertiary-fixed: #ffe088;
+  --color-tertiary-fixed-dim: #e9c349;
+  --color-on-tertiary-fixed: #241a00;
+  --color-on-tertiary-fixed-variant: #574500;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Spacing names used by the design */
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-margin: 3rem;
+
+  /* Fonts */
+  --font-display: 'Newsreader', serif;
+  --font-display-mobile: 'Newsreader', serif;
+  --font-headline-lg: 'Newsreader', serif;
+  --font-headline-lg-mobile: 'Newsreader', serif;
+  --font-headline-md: 'Newsreader', serif;
+  --font-headline-md-mobile: 'Newsreader', serif;
+  --font-headline-sm: 'Newsreader', serif;
+  --font-body-lg: 'Manrope', sans-serif;
+  --font-body-md: 'Manrope', sans-serif;
+  --font-body-sm: 'Manrope', sans-serif;
+  --font-label-lg: 'Manrope', sans-serif;
+  --font-label-md: 'Manrope', sans-serif;
+  --font-label-sm: 'Manrope', sans-serif;
+
+  /* Text sizes */
+  --text-display: 56px;
+  --text-display--line-height: 64px;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 400;
+  --text-display-mobile: 38px;
+  --text-display-mobile--line-height: 44px;
+  --text-display-mobile--letter-spacing: -0.01em;
+  --text-display-mobile--font-weight: 400;
+  --text-headline-lg: 40px;
+  --text-headline-lg--line-height: 48px;
+  --text-headline-lg--letter-spacing: -0.015em;
+  --text-headline-lg--font-weight: 400;
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+  --text-headline-lg-mobile--letter-spacing: -0.01em;
+  --text-headline-lg-mobile--font-weight: 400;
+  --text-headline-md: 28px;
+  --text-headline-md--line-height: 36px;
+  --text-headline-md--font-weight: 500;
+  --text-headline-md-mobile: 22px;
+  --text-headline-md-mobile--line-height: 28px;
+  --text-headline-md-mobile--font-weight: 500;
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 26px;
+  --text-headline-sm--font-weight: 500;
+  --text-body-lg: 17px;
+  --text-body-lg--line-height: 28px;
+  --text-body-lg--font-weight: 400;
+  --text-body-md: 15px;
+  --text-body-md--line-height: 24px;
+  --text-body-md--font-weight: 400;
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 20px;
+  --text-body-sm--font-weight: 400;
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-lg--letter-spacing: 0.02em;
+  --text-label-lg--font-weight: 600;
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.04em;
+  --text-label-md--font-weight: 600;
+  --text-label-sm: 10px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--letter-spacing: 0.08em;
+  --text-label-sm--font-weight: 700;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body-md);
+  -webkit-font-smoothing: antialiased;
+}
