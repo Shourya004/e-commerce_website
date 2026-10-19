@@ -10,4 +10,5 @@ import { EmptyState } from '../../shared/components/empty-state/empty-state';
 })
 export class Home {
   unused = 1;
+  onemore = 0;
 }
