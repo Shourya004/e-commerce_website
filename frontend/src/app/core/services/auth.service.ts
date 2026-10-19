@@ -1,6 +1,7 @@
 import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+import { clearHttpCache } from '../interceptors/cache.interceptor';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -19,6 +20,7 @@ export class AuthService {
 
   logout() {
     if (this.isBrowser) localStorage.removeItem('token');
+    clearHttpCache();
     this.router.navigate(['/auth/login']);
   }
 }
