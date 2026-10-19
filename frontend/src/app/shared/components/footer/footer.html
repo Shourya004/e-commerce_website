@@ -1,0 +1,88 @@
+<footer
+  class="w-full bg-surface-container-low pb-space-lg pt-space-xl shadow-[0_-2px_16px_rgba(43,38,33,0.03)]"
+>
+  <div class="mx-auto max-w-[1280px] px-margin-mobile lg:px-margin">
+    <div class="grid grid-cols-1 gap-space-lg pb-space-xl md:grid-cols-2 lg:grid-cols-4">
+      <!-- Brand -->
+      <div class="flex flex-col gap-space-sm">
+        <span class="font-headline-sm text-headline-sm text-primary"
+          >{{ shopName }} Fine Jewellery</span
+        >
+        <p class="font-body-sm text-body-sm text-on-surface-variant">
+          Family handcrafted neighborhood atelier preserving generational purity, bespoke bridal
+          heirlooms, and trusted goldsmithing traditions.
+        </p>
+        <div
+          class="mt-2 inline-flex items-center gap-2 self-start rounded-full bg-surface-container px-3 py-1 font-label-sm text-label-sm text-secondary"
+        >
+          <span class="material-symbols-outlined text-[14px]">verified</span>BIS 916 Hallmarked
+          Certified
+        </div>
+      </div>
+
+      <!-- Atelier -->
+      <div class="flex flex-col gap-space-xs">
+        <span class="mb-2 font-label-lg text-label-lg uppercase tracking-wider text-on-surface"
+          >Neighborhood Atelier</span
+        >
+        <div class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface-variant">
+          <span class="material-symbols-outlined mt-0.5 text-[18px] text-secondary"
+            >location_on</span
+          >
+          <span>Atelier Suite 4, Heritage Goldsmiths Lane, Near Clocktower, {{ city }}</span>
+        </div>
+        <div class="mt-2 flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+          <span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+          <span>Mon – Sat: 10:30 AM – 8:30 PM (Sun by Appointment)</span>
+        </div>
+      </div>
+
+      <!-- Trust -->
+      <div class="flex flex-col gap-space-xs">
+        <span class="mb-2 font-label-lg text-label-lg uppercase tracking-wider text-on-surface"
+          >Purity &amp; Trust Standards</span
+        >
+        <ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+          @for (point of trustPoints; track point.icon) {
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[16px] text-primary-container">{{
+                point.icon
+              }}</span
+              >{{ point.text }}
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Concierge -->
+      <div class="flex flex-col gap-space-sm">
+        <span class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface"
+          >Direct Artisan Concierge</span
+        >
+        <p class="font-body-sm text-body-sm text-on-surface-variant">
+          Consult directly with our master goldsmith for custom orders, sizing, or daily gold rates.
+        </p>
+        <a
+          [href]="'https://wa.me/' + whatsapp"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-primary-container px-space-md py-space-sm font-label-md text-label-md text-on-primary shadow-[0_2px_8px_rgba(21,67,48,0.15)] transition-all hover:bg-primary"
+        >
+          <span class="material-symbols-outlined text-[18px] text-primary-fixed">chat</span>
+          Message Master Artisan on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col items-center justify-between gap-space-sm pt-space-md text-center font-label-sm text-label-sm text-outline md:flex-row md:text-left"
+    >
+      <p>
+        © {{ year }} {{ shopName }} Fine Jewellery. All rights reserved. Registered BIS Jeweller.
+      </p>
+      <p class="font-medium text-secondary">
+        Generational Craftsmanship &amp; Purity Guaranteed in {{ city }}
+      </p>
+    </div>
+  </div>
+</footer>

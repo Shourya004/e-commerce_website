@@ -1,10 +1,30 @@
 # e-jwel
 
-This repository is a pnpm workspace. The React, Vite, and TypeScript application
-is in `frontend/`; `backend/` is reserved for the planned FastAPI service.
+The Angular application is in [`frontend/`](./frontend/).
 
-Run frontend commands from the repository root:
+The app source is organized by responsibility:
 
-- `pnpm dev` starts the frontend development server.
-- `pnpm build` builds the frontend.
-- `pnpm lint` runs the frontend linter.
+```text
+frontend/
+  public/                 Static assets
+  src/
+    app/
+      core/               App-wide handlers and services
+      features/           Route-level feature pages
+      layouts/            Page layouts
+      shared/             Reusable components
+    environments/         Environment configuration
+```
+
+From that directory, install dependencies and start the development server:
+
+```sh
+npm install
+ng serve / npm start
+```
+
+Build the application with:
+
+```sh
+ng build / npm run build
+```
