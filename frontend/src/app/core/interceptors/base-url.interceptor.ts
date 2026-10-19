@@ -1,4 +1,4 @@
-import { HttpInterceptor, HttpInterceptorFn } from '@angular/common/http';
+import { HttpInterceptorFn } from '@angular/common/http';
 import { environment } from '../../../environments/environment.development';
 
 export const baseUrlInterceptor: HttpInterceptorFn = (req, next) => {
