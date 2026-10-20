@@ -127,13 +127,4 @@ The browser only talks to the frontend. Requests that start with `/api` are forw
 | `localhost:8000` shows nothing | The backend is on port **5000** on your PC. Open http://localhost:5000/docs |
 | Code changes don't show up | Make sure you're in dev mode (website on port 4200), or rebuild with `--build` |
 
-## Notes
-
-- Never commit your `.env` file. Only `.env.example` goes to GitHub.
-- The database creates its tables on backend startup. If you add a column to a model, reset the data with `docker compose down -v`, or add migrations (Alembic) later.
-
-Build the application with:
-
-```sh
-ng build / npm run build
 ```
