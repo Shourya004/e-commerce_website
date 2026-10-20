@@ -8,7 +8,4 @@ import { EmptyState } from '../../shared/components/empty-state/empty-state';
   styleUrl: './home.scss',
   templateUrl: './home.html',
 })
-export class Home {
-  unused = 1;
-  onemore = 0;
-}
+export class Home {}
