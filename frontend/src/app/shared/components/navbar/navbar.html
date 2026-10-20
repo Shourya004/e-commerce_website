@@ -116,11 +116,9 @@
   @if (menuOpen()) {
     <nav
       class="absolute left-0 right-0 top-full max-h-[calc(100vh-7rem)] overflow-y-auto bg-surface px-margin-mobile pb-space-lg pt-space-sm shadow-lg lg:hidden"
-      (click)="menuOpen.set(false)"
     >
       <div
         class="mb-space-sm flex items-center rounded-full bg-surface-container-lowest px-space-md py-space-sm md:hidden"
-        (click)="$event.stopPropagation()"
       >
         <span class="material-symbols-outlined mr-2 text-[18px] text-outline">search</span>
         <input
@@ -133,6 +131,7 @@
       @for (link of links; track link.path) {
         <a
           [routerLink]="link.path"
+          (click)="menuOpen.set(false)"
           routerLinkActive="text-primary! font-bold! bg-surface-container-high!"
           [routerLinkActiveOptions]="{ exact: link.exact }"
           class="block rounded-full px-4 py-3 font-label-lg text-label-lg text-on-surface-variant"
@@ -143,6 +142,7 @@
 
       <a
         [href]="'tel:' + phone"
+        (click)="menuOpen.set(false)"
         class="mt-space-sm flex items-center justify-center gap-2 rounded-full bg-surface-container-high px-4 py-3 font-label-md text-label-md text-on-surface"
       >
         <span class="material-symbols-outlined text-[16px] text-secondary">call</span> Call

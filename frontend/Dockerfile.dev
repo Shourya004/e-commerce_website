@@ -1,0 +1,19 @@
+FROM node:24-alpine
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY . .
+
+EXPOSE 4200
+
+CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--port", "4200", "--poll", "2000", "--proxy-config", "proxy.conf.json"]
+
+# //what is need of this?
+
+# Dockerfile.dev is the recipe for the frontend container in dev mode. It tells Docker how to build an image that can run ng serve.
+
+# Why a separate file
+
+# Your normal frontend/Dockerfile builds the Angular app once into static files and serves them with nginx. Static files can’t live-reload, so for dev mode you need a container that keeps the Angular dev server running instead.
