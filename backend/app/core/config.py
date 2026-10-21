@@ -3,6 +3,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # config.py -> core -> app -> backend
 BASE_DIR = Path(__file__).resolve().parents[2]
+print(BASE_DIR / ".env")
 
 class Settings(BaseSettings):
     DATABASE_URL: str

@@ -18,7 +18,7 @@ pnpm-debug.log*
 .idea/
 
 # Local environment files
-.env
+backend/.env
 .env.*
 !.env.example
 
