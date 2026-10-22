@@ -1,13 +1,16 @@
 <header
-  class="sticky top-0 z-50 bg-surface/90 shadow-[0_2px_12px_rgba(43,38,33,0.05)] backdrop-blur-xl"
+  class="sticky top-0 z-50 bg-surface/95 shadow-[0_2px_12px_rgba(43,38,33,0.05)] backdrop-blur-xl"
 >
   <!-- Announcement bar -->
-  <div class="bg-primary px-margin-mobile py-space-xs text-on-primary lg:px-margin">
-    <div class="mx-auto flex max-w-[1280px] items-center justify-center gap-space-xs text-center">
-      <span class="material-symbols-outlined shrink-0 text-[16px] text-secondary-fixed"
+  <div class="bg-primary px-3 py-1 text-on-primary sm:px-margin-mobile lg:px-margin">
+    <div class="flex items-center justify-center gap-space-xs text-center">
+      <span
+        class="material-symbols-outlined shrink-0 text-[14px] text-secondary-fixed sm:text-[16px]"
         >verified</span
       >
-      <p class="font-label-md text-label-md uppercase tracking-wider text-surface-container-low">
+      <p
+        class="font-label-md text-[10px] uppercase tracking-wide text-surface-container-low sm:text-label-md sm:tracking-wider"
+      >
         <span class="sm:hidden">✨ Insured delivery &amp; BIS 916 Hallmark</span>
         <span class="hidden sm:inline"
           >✨ Complimentary insured doorstep delivery &amp; BIS 916 Hallmark guarantee across
@@ -19,26 +22,27 @@
 
   <!-- Main row -->
   <div
-    class="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-space-md px-margin-mobile md:h-20 lg:px-margin"
+    class="flex min-h-16 w-full items-center justify-between gap-2 px-3 sm:px-margin-mobile lg:px-margin"
   >
-    <div class="flex items-center gap-space-lg">
-      <a routerLink="/" class="flex flex-col">
+    <div class="flex min-w-0 items-center gap-3 xl:gap-6">
+      <a routerLink="/" class="flex shrink-0 flex-col">
         <span
           class="font-headline-md text-headline-md-mobile leading-none tracking-tight text-primary md:text-headline-md"
           >{{ shopName }}</span
         >
-        <span class="mt-1 font-label-sm text-label-sm uppercase tracking-widest text-secondary"
+        <span
+          class="mt-1 whitespace-nowrap font-label-sm text-[9px] uppercase tracking-[0.16em] text-secondary sm:text-label-sm"
           >Fine Jewellery Atelier</span
         >
       </a>
 
-      <nav class="hidden items-center gap-space-md lg:flex">
+      <nav class="hidden items-center gap-1 lg:flex">
         @for (link of links; track link.path) {
           <a
             [routerLink]="link.path"
             routerLinkActive="text-primary! font-bold! bg-surface-container-high! rounded-full"
             [routerLinkActiveOptions]="{ exact: link.exact }"
-            class="px-3 py-1.5 font-label-lg text-label-lg text-on-surface-variant transition-colors hover:text-primary"
+            class="whitespace-nowrap rounded-full px-2.5 py-1.5 font-label-lg text-label-lg text-on-surface-variant transition-colors hover:text-primary xl:px-3"
           >
             {{ link.label }}
           </a>
@@ -46,23 +50,23 @@
       </nav>
     </div>
 
-    <div class="flex items-center gap-space-sm">
-      <!-- Search (tablet and up) -->
+    <div class="flex shrink-0 items-center gap-1.5 sm:gap-2">
+      <!-- Search -->
       <div
-        class="hidden items-center rounded-full bg-surface-container-lowest px-space-md py-space-xs shadow-[0_1px_4px_rgba(43,38,33,0.04)] md:flex"
+        class="hidden w-36 items-center rounded-full bg-surface-container-lowest px-3 py-2 shadow-[0_1px_4px_rgba(43,38,33,0.04)] md:flex lg:w-44 xl:w-56"
       >
         <span class="material-symbols-outlined mr-2 text-[18px] text-outline">search</span>
         <input
           type="text"
           placeholder="Search gold, solitaire, bridal..."
-          class="w-44 bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none lg:w-56"
+          class="min-w-0 w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none"
         />
       </div>
 
-      <!-- Call (large desktop) -->
+      <!-- Call (large screens) -->
       <a
         [href]="'tel:' + phone"
-        class="hidden items-center gap-1.5 rounded-full bg-surface-container-high px-3 py-1.5 font-label-md text-label-md text-on-surface transition-colors hover:bg-surface-container-highest xl:flex"
+        class="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-surface-container-high px-3 py-2 font-label-md text-label-md text-on-surface transition-colors hover:bg-surface-container-highest xl:flex"
       >
         <span class="material-symbols-outlined text-[16px] text-secondary">call</span>
         <span>Call Concierge</span>
@@ -73,7 +77,7 @@
         [href]="'https://wa.me/' + whatsapp"
         target="_blank"
         rel="noopener"
-        class="flex items-center gap-1.5 rounded-full bg-primary-container px-3.5 py-2 font-label-md text-label-md text-on-primary shadow-[0_2px_8px_rgba(21,67,48,0.2)] transition-all hover:bg-primary"
+        class="flex shrink-0 items-center gap-1.5 rounded-full bg-primary-container px-2.5 py-2 font-label-md text-label-md text-on-primary shadow-[0_2px_8px_rgba(21,67,48,0.2)] transition-all hover:bg-primary sm:px-3.5"
       >
         <span class="material-symbols-outlined text-[16px] text-primary-fixed">chat</span>
         <span class="hidden sm:inline">WhatsApp Direct</span>
@@ -83,7 +87,7 @@
       <button
         type="button"
         aria-label="Cart"
-        class="relative rounded-full bg-surface-container p-2 text-on-surface transition-colors hover:bg-surface-container-high"
+        class="relative shrink-0 rounded-full bg-surface-container p-2 text-on-surface transition-colors hover:bg-surface-container-high"
       >
         <span class="material-symbols-outlined text-[20px]">local_mall</span>
         <span
@@ -93,15 +97,19 @@
       </button>
 
       <!-- Account -->
-      <div class="flex h-8 w-10 items-center justify-center rounded-full bg-primary">
+      <div
+        aria-label="Account"
+        class="hidden h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary sm:flex"
+      >
         <span class="material-symbols-outlined text-[18px] text-on-primary">person</span>
       </div>
 
       <!-- Menu button (phone and tablet) -->
       <button
         type="button"
-        aria-label="Toggle menu"
-        class="flex h-10 w-10 items-center justify-center lg:hidden"
+        [attr.aria-label]="menuOpen() ? 'Close menu' : 'Open menu'"
+        aria-controls="mobile-navigation"
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-primary transition-colors hover:bg-surface-container lg:hidden"
         [attr.aria-expanded]="menuOpen()"
         (click)="menuOpen.set(!menuOpen())"
       >
@@ -115,39 +123,54 @@
   <!-- Menu panel (phone and tablet) -->
   @if (menuOpen()) {
     <nav
-      class="absolute left-0 right-0 top-full max-h-[calc(100vh-7rem)] overflow-y-auto bg-surface px-margin-mobile pb-space-lg pt-space-sm shadow-lg lg:hidden"
+      id="mobile-navigation"
+      class="absolute left-0 right-0 top-full max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-surface-container bg-surface px-4 pb-6 pt-3 shadow-lg sm:px-margin-mobile lg:hidden"
     >
       <div
-        class="mb-space-sm flex items-center rounded-full bg-surface-container-lowest px-space-md py-space-sm md:hidden"
+        class="mb-3 flex items-center rounded-full bg-surface-container-lowest px-4 py-2.5 shadow-[0_1px_4px_rgba(43,38,33,0.04)] md:hidden"
       >
         <span class="material-symbols-outlined mr-2 text-[18px] text-outline">search</span>
         <input
           type="text"
           placeholder="Search gold, solitaire, bridal..."
-          class="min-w-0 flex-1 bg-transparent text-base text-on-surface placeholder:text-outline focus:outline-none"
+          class="min-w-0 flex-1 bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none"
         />
       </div>
 
-      @for (link of links; track link.path) {
-        <a
-          [routerLink]="link.path"
-          (click)="menuOpen.set(false)"
-          routerLinkActive="text-primary! font-bold! bg-surface-container-high!"
-          [routerLinkActiveOptions]="{ exact: link.exact }"
-          class="block rounded-full px-4 py-3 font-label-lg text-label-lg text-on-surface-variant"
-        >
-          {{ link.label }}
-        </a>
-      }
+      <div class="grid gap-1 sm:grid-cols-2">
+        @for (link of links; track link.path) {
+          <a
+            [routerLink]="link.path"
+            (click)="menuOpen.set(false)"
+            routerLinkActive="text-primary! font-bold! bg-surface-container-high!"
+            [routerLinkActiveOptions]="{ exact: link.exact }"
+            class="block rounded-full px-4 py-3 font-label-lg text-label-lg text-on-surface-variant transition-colors hover:bg-surface-container-low"
+          >
+            {{ link.label }}
+          </a>
+        }
+      </div>
 
-      <a
-        [href]="'tel:' + phone"
-        (click)="menuOpen.set(false)"
-        class="mt-space-sm flex items-center justify-center gap-2 rounded-full bg-surface-container-high px-4 py-3 font-label-md text-label-md text-on-surface"
-      >
-        <span class="material-symbols-outlined text-[16px] text-secondary">call</span> Call
-        Concierge
-      </a>
+      <div class="mt-3 grid gap-2 border-t border-surface-container pt-3 sm:grid-cols-2">
+        <a
+          [href]="'tel:' + phone"
+          (click)="menuOpen.set(false)"
+          class="flex items-center justify-center gap-2 rounded-full bg-surface-container-high px-4 py-3 font-label-md text-label-md text-on-surface transition-colors hover:bg-surface-container-highest"
+        >
+          <span class="material-symbols-outlined text-[16px] text-secondary">call</span>
+          Call Concierge
+        </a>
+        <a
+          [href]="'https://wa.me/' + whatsapp"
+          target="_blank"
+          rel="noopener"
+          (click)="menuOpen.set(false)"
+          class="flex items-center justify-center gap-2 rounded-full bg-primary-container px-4 py-3 font-label-md text-label-md text-on-primary transition-colors hover:bg-primary"
+        >
+          <span class="material-symbols-outlined text-[16px] text-primary-fixed">chat</span>
+          WhatsApp Direct
+        </a>
+      </div>
     </nav>
   }
 </header>
