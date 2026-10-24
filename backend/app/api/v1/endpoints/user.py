@@ -1,5 +1,6 @@
 # app/api/v1/endpoints/users.py
 from fastapi import APIRouter, Depends
+
 from backend.app.api.deps import get_current_user
 from backend.app.models.user import User
 from backend.app.schema.user import UserOut
