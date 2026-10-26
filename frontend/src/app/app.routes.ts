@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { MainLayout } from './layouts/main-layout/main-layout';
+import { AuthLayout } from './layouts/auth-layout/auth-layout';
+import { AdminLayout } from './layouts/admin-layout/admin-layout';
 import { Home } from './features/home/home';
 import { Collections } from './features/collections/collections';
-import { AuthLayout } from './layouts/auth-layout/auth-layout';
-import { Login } from './features/auth/login/login';
-import { AdminLayout } from './layouts/admin-layout/admin-layout';
 import { Dashboard } from './features/admin/dashboard/dashboard';
 import { NotFound } from './features/not-found/not-found';
+import { adminGuard } from './core/guards/admin.guard';
 
 export const routes: Routes = [
   {
@@ -15,18 +15,24 @@ export const routes: Routes = [
     children: [
       { path: '', component: Home },
       { path: 'collections', component: Collections },
-      { path: '**', component: NotFound },
     ],
   },
   {
     path: 'auth',
     component: AuthLayout,
-    children: [{ path: 'login', component: Login }],
+    loadChildren: () => import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
   },
   {
     path: 'admin',
     component: AdminLayout,
+    canActivate: [adminGuard],
+    canActivateChild: [adminGuard],
     children: [{ path: '', component: Dashboard }],
   },
-  { path: '**', component: NotFound },
+  // 404 goes last, still inside the main layout so the navbar and footer show
+  {
+    path: '**',
+    component: MainLayout,
+    children: [{ path: '', component: NotFound }],
+  },
 ];

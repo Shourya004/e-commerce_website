@@ -1,4 +1,10 @@
-import { ApplicationConfig, ErrorHandler, provideBrowserGlobalErrorListeners } from '@angular/core';
+import {
+  ApplicationConfig,
+  ErrorHandler,
+  inject,
+  provideAppInitializer,
+  provideBrowserGlobalErrorListeners,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -7,6 +13,7 @@ import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/
 import { baseUrlInterceptor } from './core/interceptors/base-url.interceptor';
 import { authInterceptor } from './core/interceptors/auth.interceptor';
 import { cacheInterceptor } from './core/interceptors/cache.interceptor';
+import { AuthService } from './core/services/auth.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,5 +24,6 @@ export const appConfig: ApplicationConfig = {
       withFetch(),
       withInterceptors([baseUrlInterceptor, authInterceptor, cacheInterceptor]),
     ),
+    provideAppInitializer(() => inject(AuthService).restoreSession()),
   ],
 };
