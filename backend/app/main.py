@@ -1,10 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from backend.app.api.v1.router import api_router
 from backend.app.db.base import Base
 from backend.app.db.session import engine
-from backend.app.models import user          # taaki table ban sake
-from backend.app.api.v1.router import api_router
 
 Base.metadata.create_all(bind=engine)
 
