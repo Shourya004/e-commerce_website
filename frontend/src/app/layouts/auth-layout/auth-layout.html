@@ -1,2 +1,24 @@
-<p>auth-layout works!</p>
-<router-outlet />
+<div
+  class="flex min-h-screen flex-col items-center justify-center bg-surface-container-low px-margin-mobile py-space-xl"
+>
+  <a routerLink="/" class="mb-space-lg flex flex-col items-center leading-none">
+    <span class="font-headline-md text-headline-md text-primary">[Shop Name]</span>
+    <span class="mt-1 font-label-sm text-label-sm uppercase tracking-widest text-secondary">
+      Fine Jewellery Atelier
+    </span>
+  </a>
+
+  <main
+    class="w-full max-w-md rounded-xl bg-surface-container-lowest p-space-lg shadow-sm md:p-space-xl"
+  >
+    <router-outlet />
+  </main>
+
+  <a
+    routerLink="/"
+    class="mt-space-lg inline-flex items-center gap-1 font-label-md text-label-md text-on-surface-variant transition-colors hover:text-primary"
+  >
+    <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+    Back to shop
+  </a>
+</div>

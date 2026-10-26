@@ -1,1 +1,98 @@
-<p>login works!</p>
+<h1
+  class="font-headline-md-mobile text-headline-md-mobile text-primary md:font-headline-md md:text-headline-md"
+>
+  Welcome back
+</h1>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">
+  Sign in to your account to continue.
+</p>
+
+<form
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="mt-space-lg flex flex-col gap-space-md"
+  novalidate
+>
+  @if (errorMessage()) {
+    <div
+      role="alert"
+      class="flex items-start gap-2 rounded-lg bg-error-container px-space-md py-space-sm font-body-sm text-body-sm text-on-error-container"
+    >
+      <span class="material-symbols-outlined text-[18px]">error</span>
+      <span>{{ errorMessage() }}</span>
+    </div>
+  }
+
+  <!-- Email -->
+  <div class="flex flex-col gap-1">
+    <label for="email" class="font-label-lg text-label-lg text-on-surface">Email</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      autocomplete="email"
+      placeholder="you@example.com"
+      class="rounded-lg bg-surface-container-low px-space-md py-3 font-body-md text-body-md text-on-surface outline-none ring-1 ring-outline-variant placeholder:text-outline focus:ring-2 focus:ring-primary-container"
+    />
+    @if (form.controls.email.touched && form.controls.email.invalid) {
+      <p class="font-body-sm text-body-sm text-error">
+        @if (form.controls.email.hasError('required')) {
+          Please enter your email.
+        } @else {
+          Please enter a valid email address.
+        }
+      </p>
+    }
+  </div>
+
+  <!-- Password -->
+  <div class="flex flex-col gap-1">
+    <div class="flex items-center justify-between">
+      <label for="password" class="font-label-lg text-label-lg text-on-surface">Password</label>
+      <a
+        routerLink="/auth/forgot-password"
+        class="font-label-md text-label-md text-secondary hover:text-primary"
+      >
+        Forgot password?
+      </a>
+    </div>
+    <div class="relative">
+      <input
+        id="password"
+        [type]="showPassword() ? 'text' : 'password'"
+        formControlName="password"
+        autocomplete="current-password"
+        placeholder="Your password"
+        class="w-full rounded-lg bg-surface-container-low py-3 pl-space-md pr-12 font-body-md text-body-md text-on-surface outline-none ring-1 ring-outline-variant placeholder:text-outline focus:ring-2 focus:ring-primary-container"
+      />
+      <button
+        type="button"
+        (click)="showPassword.set(!showPassword())"
+        [attr.aria-label]="showPassword() ? 'Hide password' : 'Show password'"
+        class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary"
+      >
+        <span class="material-symbols-outlined text-[20px]">
+          {{ showPassword() ? 'visibility_off' : 'visibility' }}
+        </span>
+      </button>
+    </div>
+    @if (form.controls.password.touched && form.controls.password.invalid) {
+      <p class="font-body-sm text-body-sm text-error">Please enter your password.</p>
+    }
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="submitting()"
+    class="mt-space-sm rounded-full bg-primary-container px-space-md py-3 font-label-lg text-label-lg text-on-primary shadow-[0_2px_8px_rgba(21,67,48,0.15)] transition-all hover:bg-primary disabled:cursor-not-allowed disabled:opacity-60"
+  >
+    {{ submitting() ? 'Signing in...' : 'Sign in' }}
+  </button>
+</form>
+
+<p class="mt-space-lg text-center font-body-sm text-body-sm text-on-surface-variant">
+  New here?
+  <a routerLink="/auth/register" class="font-semibold text-secondary hover:text-primary"
+    >Create an account</a
+  >
+</p>
