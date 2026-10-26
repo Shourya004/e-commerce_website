@@ -4,6 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { AuthService } from '../../../../core/services/auth.service';
+import { getSafeReturnUrl } from '../../utils/return-url';
 
 @Component({
   selector: 'app-login',
@@ -44,12 +45,7 @@ export class Login {
   }
 
   private targetUrl(role: string): string {
-    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
-    // Only allow addresses inside our own site
-    if (returnUrl && returnUrl.startsWith('/') && !returnUrl.startsWith('//')) {
-      return returnUrl;
-    }
-    return role === 'admin' ? '/admin' : '/';
+    return getSafeReturnUrl(this.route) ?? (role === 'admin' ? '/admin' : '/');
   }
 
   private readError(err: HttpErrorResponse): string {
