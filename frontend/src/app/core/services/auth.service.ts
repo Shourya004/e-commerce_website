@@ -38,20 +38,20 @@ export class AuthService {
   }
 
   login(body: LoginRequest) {
-    return this.http.post<TokenResponse>('/auth/login', body).pipe(
+    return this.http.post<TokenResponse>('/api/v1/auth/login', body).pipe(
       tap((res) => this.accessToken.set(res.access_token)),
       switchMap(() => this.loadUser()),
     );
   }
 
   register(body: RegisterRequest) {
-    return this.http.post<User>('/auth/register', body);
+    return this.http.post<User>('/api/v1/auth/register', body);14
   }
 
   loadUser() {
     // Always ask the server for the current user (never use the cache)
     const context = new HttpContext().set(SKIP_CACHE, true);
-    return this.http.get<User>('users', { context }).pipe(tap((user) => this.user.set(user)));
+    return this.http.get<User>('/api/v1/users/me', { context }).pipe(tap((user) => this.user.set(user)));
   }
 
   // Asks the backend for a new access token using the refresh cookies

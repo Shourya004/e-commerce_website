@@ -2,7 +2,6 @@ from datetime import UTC, datetime, timedelta
 
 import bcrypt
 import jwt
-
 from backend.app.core.config import settings
 
 

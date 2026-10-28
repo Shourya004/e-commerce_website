@@ -1,7 +1,4 @@
 # app/api/v1/endpoints/auth.py
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
-
 from backend.app.core.security import (
     create_access_token,
     hash_password,
@@ -10,6 +7,8 @@ from backend.app.core.security import (
 from backend.app.db.session import get_db
 from backend.app.models.user import User
 from backend.app.schema.user import LoginRequest, RegisterRequest, TokenOut, UserOut
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
 
 router = APIRouter(prefix="/auth", tags=["Auth"])   # sab URL /auth se shuru honge
 
