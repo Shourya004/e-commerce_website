@@ -51,7 +51,7 @@ export class AuthService {
   loadUser() {
     // Always ask the server for the current user (never use the cache)
     const context = new HttpContext().set(SKIP_CACHE, true);
-    return this.http.get<User>('users', { context }).pipe(tap((user) => this.user.set(user)));
+    return this.http.get<User>('/users/me', { context }).pipe(tap((user) => this.user.set(user)));
   }
 
   // Asks the backend for a new access token using the refresh cookies
